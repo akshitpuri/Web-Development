@@ -1,0 +1,52 @@
+<div class="breadcrumbs">
+  <div class="container">
+    <ol class="breadcrumb breadcrumb1 animated wow slideInLeft" data-wow-delay=".5s">
+      <li><a routeLink="/sitehome"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home</a></li>
+      <li ><a routerLink="/cart">Cart</a></li>
+      <li class="active">Delivery & payment</li>
+    </ol>
+  </div>
+</div>
+<!-- //breadcrumbs -->
+<div class="register">
+  <div class="container">
+    <div class="login-form-grids">
+      <h4>Address</h4><br>
+      <div *ngIf ="visibilityadd">
+          <b>{{name}}</b><br>
+          {{streetaddress}}<br>
+          {{city}},{{state}},{{pin}}<br>
+          {{phone}}<br><br>
+          <a routerLink="/selectaddress">change address</a>
+      </div>
+      
+      <div *ngIf="!visibilityadd"><a routerLink="/addressdetails">Add Address</a></div>
+      <br>
+       
+        <label ><h4>Please Choose Payment Mode</h4></label><br><br>
+        <label><input type="radio" name="gen" value="Online" [(ngModel)]="paymentmode" (click)="onclickop()">Online Payment</label>
+        <label><input type="radio" name="gen" value="cod" [(ngModel)]="paymentmode"  (click)="onclickcod()">Cash on Delivery</label>
+        <br><br>
+      <div  *ngIf="visibility" >      <input  *ngIf="visibility" type="text" placeholder="Card Holder Name" required=" " name="em" [(ngModel)]="holdername" >
+        <br>
+        <input  *ngIf="visibility" type="text" placeholder="Card Company" required=" " name="em" [(ngModel)]="companyname" >
+        <br>
+        <input  *ngIf="visibility" type="text" placeholder="Card Number" required=" " name="em" [(ngModel)]="cardno" >
+        <br>
+        <label *ngIf="visibility">Card Expiry<input type="month" required=" " name="pass" [(ngModel)]="expirydate"></label><br><br>
+        <input  *ngIf="visibility" type="password" placeholder="CVV" required=" " name="em" [(ngModel)]="cvvno" >
+
+        <!-- <input type="mon" placeholder="Password" required=" " name="pass" [(ngModel)]="pass"> -->
+        <!-- <input type="password" placeholder="Password Confirmation" required="" name="cpass" [(ngModel)]="cpass" > -->
+      </div>
+        <input type="submit" value="Continue" name="s1" (click)="onpayment()">
+  
+      <br>    </div>
+    <div class="register-home">
+      <a href="index.html">Home</a>
+    </div>
+  </div>
+</div>
+
+
+

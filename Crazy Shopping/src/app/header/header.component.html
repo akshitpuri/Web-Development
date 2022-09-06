@@ -1,0 +1,130 @@
+<div class="agileits_header">
+  <div class="container">
+    <div class="w3l_offers">
+      <p> Welcome {{name}} <a routerLink="/allproducts">SHOP NOW</a></p>
+    </div>
+    <div class="agile-login">
+      <ul>
+        <li *ngIf="vis"><a routerLink="signup"> Create Account </a></li>
+        <li *ngIf="vis"><a routerLink="login">Login</a></li>
+        <li *ngIf="!vis"><a (click)="onlogout()">Logout</a></li>
+        <li *ngIf="!vis"><a routerLink="/changepassword">Change Password</a></li>
+        <li *ngIf="!vis"><a routerLink="/account"> Account </a></li>
+      </ul>
+    </div>
+    <div *ngIf="!vis" class="product_list_header">  
+        <form action="#" method="post" class="last"> 
+          <button class="w3view-cart" type="submit" name="submit" value="">
+           
+            <a routerLink="cart"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></a></button>
+            <label style="color: white"> {{productsincart}}</label>
+
+
+        </form>  
+    </div>
+    <div class="clearfix"> </div>
+  </div>
+</div>
+
+<div class="logo_products">
+  <div class="container">
+  <div class="w3ls_logo_products_left1">
+      <ul class="phone_email">
+        <li><i class="fa fa-phone" aria-hidden="true"></i>Order online or call us : (+91) 7837239393</li>
+        
+      </ul>
+    </div>
+    <div class="w3ls_logo_products_left">
+      <h1><a routerLink="/sitehome">4G Shopping</a></h1>
+    </div>
+  <div class="w3l_search">
+    <form action="#" method="post">
+      <input type="search" name="Search" placeholder="Search for a Product..." required="" [(ngModel)]="pname">
+      <button type="submit" class="btn btn-default search" aria-label="Left Align">
+        <a routerLink="allproducts" [queryParams]="{pname: pname}"><i class="fa fa-search" aria-hidden="true"> </i></a>
+      </button>
+      <div class="clearfix"></div>
+    </form>
+  </div>
+    
+    <div class="clearfix"> </div>
+  </div>
+</div>
+<div class="navigation-agileits">
+  <div class="container">
+    <nav class="navbar navbar-default">
+            <!-- Brand and toggle get grouped for better mobile display -->
+
+            <div class="navbar-header nav_2">
+              <button type="button" class="navbar-toggle collapsed navbar-toggle1" data-toggle="collapse" data-target="#bs-megadropdown-tabs">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            </div> 
+            <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
+
+              <ul class="nav navbar-nav">
+                <li class="active"><a routerLink="/sitehome" class="act">Home</a></li>	
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" >Shop By Categories<b class="caret"></b></a>
+                    <ul class="dropdown-menu multi-column columns-3">
+                      <div class="row">
+                        <div class="multi-gd-img">
+                          <ul class="multi-column-dropdown">
+                            <!-- <h6>All Household</h6> -->
+                            <li *ngFor="let x of allcat"><a routerLink="/showsubcat" [queryParams]="{catid:x._id}">
+                      {{x.catname}}   
+                       
+
+                          </a></li>                          
+                          </ul>
+                        </div>
+                      </div>
+                    </ul>
+                  </li>
+                
+                <li class="active"><a routerLink="/allproducts" class="act">All Products</a></li>	
+
+                <!-- Mega Menu -->
+
+                
+               
+               
+                
+               
+                <li><a routerLink="/trendingproducts">Trending Products</a></li>
+                <li><a routerLink="/offers">Offers</a></li>
+                <li><a routerLink="/contactus">Contact Us</a></li>
+              </ul>
+              
+            </div>
+            </nav>
+    </div>
+  </div>
+  
+<!-- //navigation -->
+<!-- main-slider -->
+<!--  
+<ul id="demo1">
+    <li>
+      <img src="images/11.jpg" alt="" />
+      <div class="slide-desc">
+        <h3>Buy Rice Products Are Now On Line With Us</h3>
+      </div>
+    </li>
+    <li>
+      <img src="images/22.jpg" alt="" />
+        <div class="slide-desc">
+        <h3>Whole Spices Products Are Now On Line With Us</h3>
+      </div>
+    </li>
+    
+    <li>
+      <img src="images/44.jpg" alt="" />
+      <div class="slide-desc">
+        <h3>Whole Spices Products Are Now On Line With Us</h3>
+      </div>
+    </li>
+  </ul> -->

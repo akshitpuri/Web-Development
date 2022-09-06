@@ -1,0 +1,35 @@
+<div class="breadcrumbs">
+  <div class="container">
+    <ol class="breadcrumb breadcrumb1 animated wow slideInLeft" data-wow-delay=".5s">
+      <li><a href="index.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home</a></li>
+      <li class="active">Register Page</li>
+    </ol>
+  </div>
+</div>
+<!-- //breadcrumbs -->
+<!-- register -->
+<div class="register">
+  <div class="container">
+    <h2>Register Here</h2>
+    <div class="login-form-grids">
+      <h5>profile information</h5>
+        <input type="text" placeholder="First Name..." required=" " name="nm" [(ngModel)]="name" #tname="ngModel">
+        <span class=error *ngIf="tname.invalid && tname.touched && tname.errors.required">Please inputname</span>
+        <input type="text" placeholder="phone" required=" " name="ph" [(ngModel)] ="phone"><br>
+        <h5>Gender  </h5>
+        <label><input type="radio" name="gen" value="Male" [(ngModel)]="gender">Male </label>>
+        <label><input type="radio" name="gen" value="Female" [(ngModel)]="gender">FeMale </label>
+<br><br>
+        <input type="email" placeholder="Email Address" required=" " name="em" [(ngModel)]="un" >
+        <input type="password" placeholder="Password" required=" " name="pass" [(ngModel)]="pass">
+        <input type="password" placeholder="Password Confirmation" required="" name="cpass" [(ngModel)]="cpass" >
+       
+        <input type="submit" value="Register" name="s1" (click)="ons1click()">
+      <br>{{msg}}
+    </div>
+    <div class="register-home">
+      <a href="index.html">Home</a>
+    </div>
+  </div>
+</div>
+

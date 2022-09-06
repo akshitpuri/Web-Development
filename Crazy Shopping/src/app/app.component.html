@@ -1,0 +1,16 @@
+<div [ngSwitch]="utype">
+        <div *ngSwitchCase="'admin'">
+            <app-adminheader></app-adminheader>
+        </div>
+        <div *ngSwitchCase="'normal'">
+            <app-header></app-header>
+        </div>
+        <div *ngSwitchCase="'seller'">
+                <app-sellerheader></app-sellerheader>
+            </div>
+        <div *ngSwitchDefault>
+            <app-header></app-header>
+        </div>
+    </div>
+    <router-outlet></router-outlet>
+    <app-footer></app-footer>

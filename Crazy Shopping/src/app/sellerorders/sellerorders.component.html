@@ -1,0 +1,53 @@
+<div class="breadcrumbs">
+    <div class="container">
+        <ol class="breadcrumb breadcrumb1">
+            <li><a href="index.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home</a></li>
+            <li class="active">Checkout Page</li>
+        </ol>
+    </div>
+  </div>
+  <!-- //breadcrumbs -->
+  <!-- checkout -->
+  <div class="checkout">
+    <div class="container">
+        <div class="checkout-right">
+            <table class="timetable_sub">
+                <thead>
+                    <tr>
+                        <th>SL No.</th>	
+                        <th>Picture</th>
+                        <th>Name</th>
+                        <th>Rate</th>
+                        <th>Quantity</th>
+                        <th>Total Cost</th>
+                        <th >Change Status</th>
+                        <th >Update</th>
+                    </tr>
+                </thead>
+                <!-- doubt pending add status in order table -->
+                <tr class="rem1" *ngFor="let x of orders;let i=index">
+                    <td class="invert">{{i+1}}</td>
+           
+                    <td class="invert"><img src="uploads/{{x.ppic}}" height="75"></td>
+                    <td class="invert">{{x.pname}}</td>
+                    <td class="invert">{{x.pprice}}</td>
+                    <td class="invert">{{x.pqty}}</td>
+                    <td class="invert">{{x.pprice}}</td>
+                    <!-- <td class="invert">{{x.status}}</td> -->
+                            <td class="invert"> <select name="st" [(ngModel)]="newstatus[i]">
+                                        <option value="">Choose</option>
+                                        <option>Shipped</option>
+                                        <option>Cancelled</option>
+                                        <option>In-Transit</option>
+                                        <option>Delivered</option>
+                                        <option>Delayed</option>
+                                        <option>Returned</option>
+                                      </select><br/></td>
+                                      <td><input type="button" name="s1" (click)="updatestatus(x._id,i)" value="Update"><br/></td>
+                  </tr>    
+            </table>
+        </div>
+       </div>
+        
+    </div>
+  

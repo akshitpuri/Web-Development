@@ -1,0 +1,49 @@
+
+<!-- //breadcrumbs -->
+<!-- checkout -->
+<div class="checkout">
+        <div class="container">
+            
+                                                    
+             <div class="checkout-right">
+                <table class="timetable_sub">
+                    <thead>
+                        <tr>
+                            <th>Sr. No</th>
+                            <th>Order No</th>	
+                            <th>Payment Mode</th>
+                            <th>Address</th>
+                            <th>Date</th>
+                            <th>Amount</th>
+                            <th>Current Status</th>
+                            <th *ngIf="visible">Change Status</th>
+                            <th *ngIf="visible">Update</th>
+
+
+                        </tr>
+                    </thead>
+                    <tr class="rem1" *ngFor="let x of orders;let i=index">
+                        <td class="invert">{{i+1}}</td>
+                        <td class="invert"><a routerLink="/orderdetails" [queryParams]="{orderid: x._id}">{{x._id}}</a></td>
+                        <td class="invert">{{x.paymentmode}}</td>
+                        <td class="invert">{{x.address}}</td>
+                        <td class="invert">{{x.orderdate}}</td>
+                        <td class="invert">{{x.billtotal}}</td>
+                        <td class="invert">{{x.status}}</td>
+                            <td *ngIf="visible">                               <select name="st" [(ngModel)]="newstatus[i]">
+                                        <option value="">Choose</option>
+                                        <option>Shipped</option>
+                                        <option>Cancelled</option>
+                                        <option>In-Transit</option>
+                                        <option>Delivered</option>
+                                        <option>Delayed</option>
+                                        <option>Returned</option>
+                                      </select><br/></td>
+                                      <td *ngIf="visible"><input type="button" name="s1" (click)="updatestatus(x._id,i)" value="Update"><br/></td>
+           
+                      </tr> 
+                </table>
+            </div>
+           </div>
+            
+        </div>

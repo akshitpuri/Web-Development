@@ -1,0 +1,24 @@
+
+<div class="login">
+    <div class="container">
+    <div class="agile_top_brands_grids">
+      <div *ngFor="let x of allsubcat"class="col-md-4 top_brand_left">
+        <div class="hover14 column">
+          <div class="agile_top_brand_left_grid">
+            <div class="agile_top_brand_left_grid1">
+              <figure>
+                <div class="snipcart-item block" >
+                  <div class="snipcart-thumb" >
+                    <a routerLink="/showproducts" [queryParams]="{subcatid:x._id}"><img title=" " alt="no img" src="uploads/{{x.subcatpic}}" height="200" />		
+                    <p>{{x.subcatname}}</p></a>
+                  </div>
+                </div>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </div></div>
+      <div class="clearfix"> </div>
+    {{msg}}
+    </div>
+      </div>

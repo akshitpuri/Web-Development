@@ -1,0 +1,69 @@
+<!-- header -->
+<div class="agileits_header">
+    <div class="container">
+      <div class="w3l_offers">
+        <p>Welcome {{name}}</p>
+      </div>
+      <div class="agile-login">
+        <span ></span>
+        <ul>
+            <li *ngIf="vis"><a routerLink="signup"> Create Account </a></li>
+            <li *ngIf="vis"><a routerLink="login">Login</a></li>
+            <li *ngIf="!vis"><a (click)="onlogout()">Logout</a></li>
+            <li *ngIf="!vis"><a routerLink="/changepassword">Change Password</a></li>
+            <li *ngIf="!vis"><a routerLink="/account"> Account </a></li>
+          </ul>
+      </div>
+    
+    </div>
+  </div>
+  
+ 
+  <!-- //header -->
+  <!-- navigation -->
+  <div class="navigation-agileits">
+    <div class="container">
+      <nav class="navbar navbar-default">
+              <!-- Brand and toggle get grouped for better mobile display -->
+              <div class="navbar-header nav_2">
+                <button type="button" class="navbar-toggle collapsed navbar-toggle1" data-toggle="collapse" data-target="#bs-megadropdown-tabs">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+              </div> 
+              <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
+                <ul class="nav navbar-nav">
+                  <li class="active"><a routerLink="#" class="act">Home</a></li>	
+                  <!-- Mega Menu
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Manage<b class="caret"></b></a>
+                    <ul class="dropdown-menu multi-column columns-3">
+                      <div class="row">
+                        <div class="multi-gd-img">
+                          <ul class="multi-column-dropdown">
+                            <h6>Your Products</h6>
+                            <li><a routerLink="/managecat">Category</a></li>
+                            <li><a routerLink="/managesubcat">Sub Category</a></li>
+                            <li><a routerLink="/manageproducts">Products</a></li>
+                          </ul>
+                        </div>	
+                        
+                      </div>
+                    </ul>
+                  </li> -->
+                  <li class="active"><a routerLink="/manageproducts">Your Products</a></li>	
+                  <li class="active"><a routerLink="/mostsellingproducts">Most Selling Selling Products</a></li>	
+                  <li class="active"><a routerLink="/selleroffers">Add offers</a></li>	
+                  <li class="active"><a routerLink="/sellerorders">Orders</a></li>	
+
+                  
+                  <li><a routerLink="">......</a></li>
+                </ul>
+              </div>
+              </nav>
+      </div>
+    </div>
+    
+  <!-- //navigation -->

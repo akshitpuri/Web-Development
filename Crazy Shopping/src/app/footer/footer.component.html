@@ -1,0 +1,67 @@
+<div class="footer">
+    <div class="container">
+      <div class="w3_footer_grids">
+        <div class="col-md-3 w3_footer_grid">
+          <h3>Contact</h3>
+          
+          <ul class="address">
+            <li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i><a href="https://www.google.com/maps/place/4G+Shop/@31.331911,75.5741361,17z/data=!3m1!4b1!4m5!3m4!1s0x391a5a60492b67f3:0x87ae29bd4022ea65!8m2!3d31.331911!4d75.5763248" target="_blank">Mota Singh Nagar <span>Jalandhar City.</span></a></li>
+            <li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><a href="mailto:4Gshop@gmail.com?Subject=Hello%20again" target="_top">4Gshop@gmail.com</a>
+            </li>
+            <li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>+917837239393</li>
+            <li><i class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></i><a routerLink="/feedback">Give Feedback</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 w3_footer_grid">
+          <h3>Information</h3>
+          <ul class="info"> 
+            <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a routerLink="/aboutus">About Us</a></li>
+            <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a routerLink="/contactus">Contact Us</a></li>  
+            <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a routerLink="/faqs">FAQ's</a></li>
+            <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a routerLink="offers">Offers</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 w3_footer_grid">
+          <h3>Category</h3>
+          <ul class="info"> 
+              <li *ngFor="let x of allcat"><i class="fa fa-arrow-right" aria-hidden="true"></i><a routerLink="/showsubcat" [queryParams]="{catid:x._id}">{{x.catname}}</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 w3_footer_grid">
+          <h3>Profile</h3>
+          <ul class="info"> 
+            <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a routerLink="allproducts">Products</a></li>
+            <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a routerLink="cart" >My Cart</a></li>
+            <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a routerLink="login">Login</a></li>
+            <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a routerLink="signup">Create Account</a></li>
+          </ul>
+        </div>
+        <div class="clearfix"> </div>
+      </div>
+    </div>
+  <div class="footer-copy">
+      <div class="container">
+        <p>&copy; 2019 4G Shopping. All rights reserved | Design by <a href="https://www.facebook.com/Akie"  target="_blank" style="color:#3e26f2">Akshit Puri</a></p>
+      </div>
+    </div>
+    
+  </div>	
+  <div class="footer-botm">
+      <div class="container">
+        <div class="w3layouts-foot">
+          <ul>
+              <li><a href="https://www.facebook.com/akie4gshop" target="_blank" class="w3_agile_facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+              <li><a href="https://www.instagram.com/akie4gshop/" target="_blank" class="w3_agile_instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+
+              <!-- <li><a href="#" class="agile_twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+            <li><a href="#" class="w3_agile_dribble"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+            <li><a href="#" class="w3_agile_vimeo"><i class="fa fa-vimeo" aria-hidden="true"></i></a></li> -->
+          </ul>
+        </div>
+        <div class="payment-w3ls">	
+          <img src="images/card.png" alt=" " class="img-responsive">
+        </div>
+        <div class="clearfix"> </div>
+      </div>
+    </div>
+  

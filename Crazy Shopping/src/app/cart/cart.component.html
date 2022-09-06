@@ -1,0 +1,86 @@
+<!-- //navigation -->
+<!-- breadcrumbs -->
+<div class="breadcrumbs">
+		<div class="container">
+			<ol class="breadcrumb breadcrumb1">
+				<li><a routerLink="/sitehome"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home</a></li>
+				<li class="active">Cart</li>
+			</ol>
+		</div>
+	</div>
+<!-- //breadcrumbs -->
+<!-- checkout -->
+	<div  class="checkout">
+		<div *ngIf="visibility" class="container">
+			<h2>Your shopping cart contains: <span>{{totalitems}} Products</span></h2>
+			<div class="checkout-right">
+				<table class="timetable_sub">
+					<thead>
+						<tr>
+							<th>SL No.</th>	
+							<th>Product</th>
+							<th>Product Name</th>
+							<th>Quantaty</th>
+							<th>Price</th>
+							<th>Total Price</th>
+							<th>Remove</th>
+						</tr>
+					</thead>
+					<tr *ngFor="let x of cart ; let i=index" class="rem1">
+						<td class="invert">{{i+1}}</td>
+						<td ><a routerLink="/productdetails" [queryParams]="{pid:x.pid}"><img src="uploads/{{x.ppic}}" height=100px alt=" "  /></a></td>
+						<td class="invert">{{x.pname}}</td>
+						<td class="invert">
+							 <div class="quantity"> 
+								<div class="quantity-select">                           
+									<select class="form-control" [(ngModel)]="qty[i]" value="choose" (change)="onchangeqty(x._id,i,x.pprice)" > 
+										<option *ngFor="let val of arr10 ,let u=index" [value]=u+1>{{u+1}} </option>
+									  </select>
+								</div>
+							</div>
+						</td>
+						<td class="invert">{{x.pprice}}</td>
+						<td class="invert">{{x.ptotal}}</td>
+
+						<td class="invert">
+							<div class="rem">
+								<a (click)="removecartitem(x._id)" >Remove</a>
+							</div>
+						</td>
+					</tr>
+					
+				</table>
+				{{msg}}
+			<!-- </div>
+			<div class="checkout-left">	
+				<div class="checkout-left-basket">
+					<h4>Continue to basket</h4>
+					<ul>
+						<li>Product1 <i>-</i> <span>$15.00 </span></li>
+						<li>Product2 <i>-</i> <span>$25.00 </span></li>
+						<li>Product3 <i>-</i> <span>$29.00 </span></li>
+						<li>Total Service Charges <i>-</i> <span>$15.00</span></li>
+						<li>Total <i>-</i> <span>$84.00</span></li>
+					</ul>
+				</div>-->
+				<br>
+				<h4>Total Cost of {{totalitems}} Items is {{grandtotal}}</h4>
+				<br>
+				<div class="checkout-right-basket">
+					<a routerLink="/checkout"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>Proceed To buy</a>
+					<a routerLink="/allproducts" ><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>Continue Shopping</a>
+				</div> 
+				<div class="clearfix"> </div>
+			</div>
+			
+		</div>
+		<div *ngIf=(!visibility)>
+			<h3  style="text-align: center" >Your Shopping Cart Is Empty</h3><br>
+			<img src="images/emptycart.png" height=200px style="align-content: center ; padding-left: 42%" /><br>
+	    	<a routerLink="/allproducts" ><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span><h4  style="text-align: center">Shop Now</h4> </a>
+	
+		
+	</div>
+
+
+	</div>

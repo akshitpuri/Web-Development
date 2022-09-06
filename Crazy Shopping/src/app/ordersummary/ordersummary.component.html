@@ -1,0 +1,20 @@
+<div class="breadcrumbs">
+  <div class="container">
+    <ol class="breadcrumb breadcrumb1 animated wow slideInLeft" data-wow-delay=".5s">
+      <li><a href="index.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home</a></li>
+      <li class="active">Order Summary</li>
+    </ol>
+  </div>
+</div>
+<!-- //breadcrumbs -->
+<!-- register -->
+<div class="register">
+  <div class="container">
+    <h1 style="color:green">Thank you for shopping with us.</h1>
+    <br>
+    <div>
+   Your Order is Succesful. Your order number is 
+   <a routerLink="/orderdetails" [queryParams]="{orderid:orderno}"> {{orderno}} </a>		
+   </div>
+</div>
+</div>

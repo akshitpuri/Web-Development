@@ -1,0 +1,41 @@
+<div class="breadcrumbs">
+  <div class="container">
+    <ol class="breadcrumb breadcrumb1 animated wow slideInLeft" data-wow-delay=".5s">
+      <li><a href="index.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home</a></li>
+      <li class="active">Login Page</li>
+    </ol>
+  </div>
+</div>
+<!-- //breadcrumbs -->
+<!-- login -->
+<div class="login">
+  <div class="container">
+    <h2>Manage SubCatagory</h2>
+   
+    <div class="login-form-grids animated wow slideInUp" data-wow-delay=".5s">
+      <select class="input"  [(ngModel)]="catid" value="choose" (change)="onchange()" > 
+        <option value="">Choose Category</option>
+        <option *ngFor="let x of cat" [value]=x._id>{{x.catname}} </option>
+      </select>
+        <input type="text" placeholder="SubCategory Name" required=" " name="cname" [(ngModel)]="cname" ><br>
+        <input type="file" placeholder="Category Picture" (change)="fileselect($event)">
+        <img *ngIf=(!visible) src="uploads/{{picname}}" height=50px>
+        <input *ngIf=(visible) type="submit" value="Add Category" name="s1" (click)="onaddsubcat()">
+        <input *ngIf=(!visible) type="submit" value="Update" name="s1" (click)="onupdatetodb()">
+    <br>
+    <br>{{msg}}<br><br>
+    <table class = "table table-striped">
+      <tr>
+        <th>Category  Name</th>
+        <th>Update </th>
+        <th>Delete</th>
+      </tr>
+      <tr *ngFor="let x of subcat">
+        <td>{{x.subcatname}}</td>
+        <td><input type="submit"  value="Update" (click)="onupdateclick(x)"></td>
+        <td><input type="submit"  value="Delete" (click)="ondelete(x._id)"></td>
+      </tr>
+      <tr></tr>
+      <tr></tr>
+    </table>     </div>
+</div>

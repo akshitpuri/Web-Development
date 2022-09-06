@@ -1,0 +1,62 @@
+
+<div class="login">
+    <div class="container">
+    <div class="agile_top_brands_grids">
+        
+      <div *ngFor="let x of alladdress ;let i = index" class="col-md-4 top_brand_left">
+        <div class="hover14 column">
+          <div class="agile_top_brand_left_grid">
+            <div class="agile_top_brand_left_grid1">
+              <figure>
+                <div class="snipcart-item block" >
+                  <div class="snipcart-thumb">
+                 
+                    <h5>{{x.name}}</h5>
+                      <p style="text-align: left">{{x.streetaddress}}</p>
+                      <p style="text-align: left">{{x.city}},{{x.state}},{{x.pin}}</p>
+                      <p style="text-align: left">{{x.phone}}</p>
+                      <br>
+                      <table width="100%">                 
+                        <tr>
+                      <td style="text-align:start"><a routerLink="/addressdetails" [queryParams]="{id:x._id}">Edit</a></td>
+                      <td style="text-align:left" width="29%"><a (click)="deleteaddress(x._id)">Delete</a></td>
+                      <td style="text-align: left"width="100%"><a *ngIf="i!=0" (click)="setdefault(x._id)">Set as Default</a> </td>
+                    </tr>
+                    </table>
+                    <br>
+                  <a routerLink="/checkout" [queryParams]="{address:x._id}" ><input type="submit" style="background-color:#4c4cf7; border-color:white" value="Deliver Here" name="s1" class="btn btn-primary btn-lg btn-block"></a>
+                  </div>
+                </div>
+              </figure>
+            </div>
+          </div>
+        </div>
+        <br>
+        <br><br>
+      </div>
+      <div class="col-md-4 top_brand_left">
+          <div class="hover14 column">
+            <div class="agile_top_brand_left_grid">
+              <div class="agile_top_brand_left_grid1">
+                <figure>
+                  <div class="snipcart-item block" >
+                    <div class="snipcart-thumb" >
+                        <a routerLink="/addressdetails">		
+                          <img src="images/add.png" height=70px>
+                          <p>Add New Address</p>
+                        </a>
+                    </div>
+                  </div>
+                </figure>
+              </div>
+            </div>
+          </div>
+        </div> 
+    </div>
+      <div class="clearfix"> </div>
+    
+    {{msg}}
+    
+    </div>
+      </div>
+      

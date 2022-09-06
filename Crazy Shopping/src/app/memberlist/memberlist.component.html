@@ -1,0 +1,29 @@
+<div class="breadcrumbs">
+  <div class="container">
+    <ol class="breadcrumb breadcrumb1 animated wow slideInLeft" data-wow-delay=".5s">
+      <li><a href="index.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home</a></li>
+      <li class="active">Register Page</li>
+    </ol>
+  </div>
+</div>
+<!-- //breadcrumbs -->
+<!-- register -->
+<div class="register">
+  <div class="container">
+    <h2>USERS DATA</h2>
+    <div class="login-form-grids">
+     <table class="table table-striped">
+      <tr *ngFor="let x of userlist" > 
+        <td>{{x.name}}</td>
+        <td>{{x.phone}}</td>
+        <td>{{x.gender}}</td>
+        <td>{{x.username}}</td>
+        <td>     <input type="submit" value="Delete" name="s1" (click)="ons1click(x._id)"> </td>
+      </tr>
+      </table>
+ </div><br>
+  {{msg}}<br>
+  </div>
+</div>
+
+

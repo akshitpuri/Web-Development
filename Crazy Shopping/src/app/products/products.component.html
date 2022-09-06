@@ -1,0 +1,60 @@
+<div class="breadcrumbs">
+  <div class="container">
+    <ol class="breadcrumb breadcrumb1 animated wow slideInLeft" data-wow-delay=".5s">
+      <li><a href="index.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home</a></li>
+      <li class="active">Login Page</li>
+    </ol>
+  </div>
+</div>
+<!-- //breadcrumbs -->
+<!-- login -->
+<div class="login">
+  <div class="container">
+    <h2>Manage Products</h2>
+   
+    <div class="login-form-grids animated wow slideInUp" data-wow-delay=".5s">
+      <select class="form-control"  [(ngModel)]="catid"  (change)="onchange()" > 
+        <option value="">Choose Category</option>
+        <option *ngFor="let x of cat" [value]=x._id>{{x.catname}} </option>
+      </select>
+    <br><br>
+      <select class="form-control"  [(ngModel)]="subcatid" value="choose"  > 
+        <option value="">Choose SubCategory</option>
+        <option *ngFor="let x of subcat" [value]=x._id>{{x.subcatname}} </option>
+      </select>
+<br><br>
+        <input type="text" placeholder="Product Name" required=" " name="pname" [(ngModel)]="pname" ><br>
+        <input type="text" placeholder="Price" required=" " name="pname" [(ngModel)]="price" ><br>
+        <input type="text" placeholder="Discount" required=" " name="pname" [(ngModel)]="discount" ><br>
+        <input type="text" placeholder="Description" required=" " name="pname" [(ngModel)]="description" ><br>
+        <input type="text" placeholder="Stock" required=" " name="pname" [(ngModel)]="stock" ><br>
+
+        <input type="file" placeholder="Category Picture" (change)="fileselect($event)">
+        <div *ngIf="visible">
+        <input type="submit" value="Add Product" name="s1" (click)="onaddproduct()">
+        </div>
+        <div *ngIf="!visible">
+          <img src="uploads/{{picname}}" height=50px>
+          <input type="submit" value="Update" name="s1" (click)="onupdateproduct()">
+          </div>
+    <br>
+    {{msg}}
+  </div>
+<table class = "table table-striped">
+  <tr>
+    <th>Product Pic</th>
+    <th>Product Name</th>
+    <th>Update </th>
+    <th>Delete</th>
+  </tr>
+  <tr *ngFor="let x of products">
+    <td><img  src="uploads/{{x.ppic}}" height="50">       </td>
+    <td>{{x.pname}}</td>
+    <td><input type="submit"  value="Update" (click)="onupdateclick(x)"></td>
+    <td><input type="submit"  value="Delete" (click)="ondelete(x._id)"></td>
+  </tr>
+  <tr></tr>
+  <tr></tr>
+</table> 
+
+</div>
